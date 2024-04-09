@@ -84,13 +84,21 @@ def home(request):
     # return HttpResponse(data0)
     # data = Student.objects.all()
     # print(data)
+    
 
-    # data1 = Student.objects.filter(id=1).update(stu_name = "Neeraj Patel")
-    # print(data1)
+    ## bulk_create()      
+    # data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
+    # ])
+    # print(data)
+    
+    ## filter().update()
+    # data = Student .objects.filter(id=11).update(stu_name="ravi",stu_email="ravi@gmail.com",stu_city='Mandala')
+    # print(data)
 
-    # data1 = Student.objects.filter(id=2).delete()
-    # print(data1)       
-            
-    data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
-    ])
+    ## get().delete()
+    # data = Student.objects.get(id=11).delete()
+    # print(data)
+
+    ## filter().delete()
+    data = Student.objects.filter(stu_name="Neeraj").delete()
     print(data)
