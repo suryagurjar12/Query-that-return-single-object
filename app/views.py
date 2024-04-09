@@ -6,11 +6,11 @@ from django.http import HttpResponse
 
 def home(request):
     # get(coloumn_name=value)
-    data0 = Student.objects.get(id=2) # get arguments always used primary-key coloumn
-    # data0 = Student.objects.get(stu_name="Neeraj Kumar")
-    # data0 = Student.objects.get(stu_name="Arvind singh")
-    print(data0.id, data0.stu_name,data0.stu_city)
-    return HttpResponse(data0)
+    # data0 = Student.objects.get(id=2) # get arguments always used primary-key coloumn
+    # # data0 = Student.objects.get(stu_name="Neeraj Kumar")
+    # # data0 = Student.objects.get(stu_name="Arvind singh")
+    # print(data0.id, data0.stu_name,data0.stu_city)
+    # return HttpResponse(data0)
     
     ## first()
     # data0 = Student.objects.first()
@@ -82,3 +82,15 @@ def home(request):
     # print(data0)
     # print(created)
     # return HttpResponse(data0)
+    # data = Student.objects.all()
+    # print(data)
+
+    # data1 = Student.objects.filter(id=1).update(stu_name = "Neeraj Patel")
+    # print(data1)
+
+    # data1 = Student.objects.filter(id=2).delete()
+    # print(data1)       
+            
+    data = Student.objects.bulk_create([Student(stu_name="Neeraj",stu_email="Neeraj@gmail.com",stu_city='Indore'),Student(stu_name="Raj" ,stu_email="Raj@gmail.com",stu_city='Jabalpur'),Student(stu_name="Arvind" ,stu_email="Arvind@gmail.com",stu_city='Mandala')
+    ])
+    print(data)
