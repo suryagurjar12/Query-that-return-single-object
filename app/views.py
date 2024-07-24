@@ -5,16 +5,18 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    # get(coloumn_name=value)
-    # data0 = Student.objects.get(id=2) # get arguments always used primary-key coloumn
-    # # data0 = Student.objects.get(stu_name="Neeraj Kumar")
-    # # data0 = Student.objects.get(stu_name="Arvind singh")
+    ## get(coloumn_name=value)
+    # data0 = Student.objects.get(id=3) # get arguments always used primary-key coloumn
+    # data0 = Student.objects.get(stu_name="Neeraj Kumar")
+    # data0 = Student.objects.get(stu_name="Arvind singh")
+    # print(data0)
     # print(data0.id, data0.stu_name,data0.stu_city)
     # return HttpResponse(data0)
     
     ## first()
     # data0 = Student.objects.first()
     # # data0 = Student.objects.order_by('stu_name').first()
+    # # data0 = Student.objects.order_by('stu_name').last()
     # # data0 = Student.objects.order_by('-stu_name').first()
     # print(data0.id, data0.stu_name,data0.stu_city)
     # return HttpResponse(data0)
@@ -26,7 +28,7 @@ def home(request):
     # print(data0.id, data0.stu_name,data0.stu_city)
     # return HttpResponse(data0)
 
-    # # latest(*fields/Coloumn)
+    # latest(*fields/Coloumn)
     # data0 = Student.objects.latest("id") # latest entry in Student table
     # print(data0.id, data0.stu_name,data0.stu_city)
     # return HttpResponse(data0)
@@ -42,12 +44,12 @@ def home(request):
     # return HttpResponse(data0)
 
     # # create(coloumn1=value1,coloumn2=value2)
-    # data0 = Student.objects.create(stu_name='Ravi',stu_email='ravi@gmail.com',stu_city='Bhopal')
+    # data0 = Student.objects.create(stu_name='RaviRaj',stu_email='raviraj@gmail.com',stu_city='Bhopal')
     # print(data0.id, data0.stu_name,data0.stu_city)
     # return HttpResponse(data0)
 
     # # get_or_create(default=None,**kwargs)
-    # data0,created = Student.objects.get_or_create(stu_name='RaviSingh',stu_email='ravisingh@gmail.com',stu_city='Pune')
+    # data0,created = Student.objects.get_or_create(stu_name='RaviSingh',stu_email='ravisingh@gmail.com',stu_city='Bhopal')
     # print(data0.id, data0.stu_name,data0.stu_city)
     # print(created)
     # return HttpResponse(data0)
@@ -99,6 +101,6 @@ def home(request):
     # data = Student.objects.get(id=11).delete()
     # print(data)
 
-    ## filter().delete()
+    # filter().delete()
     data = Student.objects.filter(stu_name="Neeraj").delete()
     print(data)
