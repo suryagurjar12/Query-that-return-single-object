@@ -104,3 +104,26 @@ def home(request):
     # filter().delete()
     data = Student.objects.filter(stu_name="Neeraj").delete()
     print(data)
+
+
+
+def about(request):
+    # get method 
+    var=Student.objects.get(id=3)
+
+    # last()
+    # var=Student.objects.last()
+
+    # first()
+    # var=Student.objects.first()
+
+    # reverse()
+    # var=Student.objects.reverse()
+
+    # filter().delete()
+    # var = Student.objects.filter(stu_name="Arvind singh").delete()
+
+    # filter().update()
+    # var = Student.objects.filter(id=10).update(stu_name="mehak",stu_email="ravi@gmail.com",stu_city='Mandala')
+    print(var)
+    return HttpResponse("BY SURYA ")
